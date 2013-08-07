@@ -32,6 +32,7 @@ def restart(playagain)
 	playagain = gets.chomp
 	while playagain != "1" && playagain != "2"
 		puts "Please enter 1) Yes 2) No"
+		playagain = gets.chomp
 	end
 	return playagain
 end
