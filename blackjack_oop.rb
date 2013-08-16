@@ -224,19 +224,20 @@ class Blackjack
     play_again?
   end
 
-  def play_again? 
+  def play_again?
     while true
       puts ""
       puts "Would you like to play again? 1) yes 2) no, exit"
      
-      if gets.chomp == '1'
+      case gets.chomp
+      when '1' then
         puts "Starting new game..."
         puts ""
         deck = Deck.new
         player.cards = []
         dealer.cards = []
         start
-      elsif gets.chomp == '2'
+      when '2' then
         puts "Goodbye!"
         exit
       else
