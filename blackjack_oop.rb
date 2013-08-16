@@ -225,19 +225,23 @@ class Blackjack
   end
 
   def play_again? 
-    puts ""
-    puts "Would you like to play again? 1) yes 2) no, exit"
-     
-    if gets.chomp == '1'
-      puts "Starting new game..."
+    while true
       puts ""
-      deck = Deck.new
-      player.cards = []
-      dealer.cards = []
-      start
-    else
-      puts "Goodbye!"
-      exit
+      puts "Would you like to play again? 1) yes 2) no, exit"
+     
+      if gets.chomp == '1'
+        puts "Starting new game..."
+        puts ""
+        deck = Deck.new
+        player.cards = []
+        dealer.cards = []
+        start
+      elsif gets.chomp == '2'
+        puts "Goodbye!"
+        exit
+      else
+        puts "Error: you must enter 1 or 2"
+      end
     end
   end
 
